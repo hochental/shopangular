@@ -1,0 +1,22 @@
+
+
+<table *ngIf="product">
+  <tr>
+    <th>Photo</th>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Describe</th>
+    <th>Category</th>
+    <th>Raiting</th>
+    <th>Availability</th>
+  </tr>
+  <tr>
+    <td><IMG src="{{product.pictureLink}}"></td>
+    <td>{{product.name}}</td>
+    <td>{{product.price}}</td>
+    <td>{{product.describe}}</td>
+    <td>category</td>
+    <td>{{product.raiting}}</td>
+    <td>{{product.available ? 'available' : 'non available'}}</td>
+  </tr>
+</table>

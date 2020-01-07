@@ -1,0 +1,26 @@
+<table>
+  <tr>
+    <th>Lp</th>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Describe</th>
+    <th>Category</th>
+    <th>Availability</th>
+    <th>Raiting</th>
+    <th>Bucket operations</th>
+    <th>More admin actions</th>
+  </tr>
+
+  <tr *ngFor="let product of listProduct" routerLink="/product/{{product.id}}">
+    <td>{{product.id}}</td>
+    <td>{{product.name}}</td>
+    <td>{{product.price}}</td>
+    <td>{{product.describe}}</td>
+    <td>In build</td>
+    <td>{{product.available ? 'available' : 'non available'}}</td>
+    <td>{{product.raiting}}</td>
+    <td>Add to cart with input box</td>
+    <td>Delete | Edit</td>
+  </tr>
+
+</table>
