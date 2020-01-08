@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Product} from '../shared/product';
+import {ProductCategory} from '../shared/product-category';
+import {ProductcategoryService} from '../productcategory-service/productcategory.service';
 
 @Component({
   selector: 'app-product-form',
@@ -7,9 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductFormComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  product:Product;
+
+  @Input()
+  category: ProductCategory;
+
+  categories: ProductCategory[];
+
+  constructor(private productCategoriesService: ProductcategoryService) { }
 
   ngOnInit() {
+    this.productCategoriesService.getCategories().subscribe(
+      (category : ProductCategory[]) => {
+        this.categories=category;
+      }
+    )
   }
-
 }

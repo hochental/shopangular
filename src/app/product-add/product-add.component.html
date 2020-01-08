@@ -1,1 +1,5 @@
-<p>product-add works!</p>
+<app-product-form *ngIf="newProduct"
+                  [product]="newProduct"
+                  [category]="category"
+                  (submit)="onSubmit()">
+</app-product-form>

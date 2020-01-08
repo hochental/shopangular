@@ -1,10 +1,12 @@
+import {ProductCategory} from './product-category';
+
 export class Product {
   id: number;
   name: string;
   pictureLink: string;
   describe: string;
-  price: string;
+  price: number;
   available: boolean;
-  raiting: string;
-  /*category: ProductCategory;*/
+  raiting: number;
+  category: ProductCategory;
 }

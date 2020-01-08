@@ -1,1 +1,13 @@
-<p>product-form works!</p>
+<form *ngIf="product">
+  <input type="text" min="3" placeholder="name" [(ngModel)]="product.name" name="name">
+  <input type="text" min="3" placeholder="describe" [(ngModel)]="product.describe" name="describe">
+  <input type="number" placeholder="price" [(ngModel)]="product.price" name="price">
+  <input type="checkbox" placeholder="available" [(ngModel)]="product.available" name="available">
+  <input type="text" min="6" placeholder="pictureLink" [(ngModel)]="product.pictureLink" name="pictureLink">
+  <select [(ngModel)]="product.category" name="category">
+    <option *ngFor="let cat of categories" [ngValue]="cat">
+      {{cat.name}}
+    </option>
+  </select>
+  <button>Add</button>
+</form>
