@@ -11,16 +11,36 @@
     <th>More admin actions</th>
   </tr>
 
-  <tr *ngFor="let product of listProduct">
+  <tr *ngFor="let product of listProduct; let i=index">
     <td>{{product.id}}</td>
-    <td>{{product.name}}</td>
+    <td routerLink="/product/{{product.id}}">{{product.name}}</td>
     <td>{{product.price}}</td>
     <td>{{product.describe}}</td>
     <td>{{product.category.name}}</td>
     <td>{{product.available ? 'available' : 'non available'}}</td>
     <td>{{product.raiting}}</td>
-    <td>Add to cart with input box</td>
+    <td><button (click)="addCart(product)">Dodaj</button></td>
     <td> <a (click)="method(product.id)">Delete</a> </td>
   </tr>
 
 </table>
+
+<table *ngIf="productList.length>0">
+  <tr>
+    <th>Name</th>
+    <th>Price</th>
+  </tr>
+  <tr *ngFor="let cart of productList">
+    <th>{{cart.name}}</th>
+    <th>{{cart.price}}</th>
+  </tr>
+
+  <app-cart-form
+                  [cartInfo]="productList"
+                  (submit)="onSubmit()">
+
+  </app-cart-form>
+
+</table>
+
+<a routerLink="/add">Dodaj produkt</a>

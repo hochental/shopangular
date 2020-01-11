@@ -1,0 +1,16 @@
+<table>
+  <tr>
+  <td>Lp</td>
+  <td>Nazwa</td>
+  <td>Ulica</td>
+  <td>Numer</td>
+  <td>Cena</td>
+  </tr>
+  <tr *ngFor="let project of projectList">
+    <td>{{project.id}}</td>
+    <td>{{project.name}}</td>
+    <td>{{project.streetName}}</td>
+    <td>{{project.streetNumber}}</td>
+    <td>{{project.price}}</td>
+  </tr>
+</table>

@@ -10,6 +10,11 @@ import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import {RouterModule} from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { CartFormComponent } from './cart-form/cart-form.component';
+import { InBuildComponent } from './in-build/in-build.component';
+import { ProjectListComponent } from './project-list/project-list.component';
+import { ProductEditComponent } from './product-edit/product-edit.component';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +22,12 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     ProductComponent,
     ProductListComponent,
     ProductFormComponent,
-    ProductAddComponent
+    ProductAddComponent,
+    CartFormComponent,
+    InBuildComponent,
+    ProjectListComponent,
+    ProductEditComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,

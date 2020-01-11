@@ -3,7 +3,6 @@ import {Product} from '../shared/product';
 import {ProductService} from '../product-service/product.service';
 import {Router} from '@angular/router';
 import {ProductCategory} from '../shared/product-category';
-import {ProductcategoryService} from '../productcategory-service/productcategory.service';
 
 @Component({
   selector: 'app-product-add',
@@ -14,7 +13,6 @@ export class ProductAddComponent implements OnInit {
 
   newProduct: Product;
   category: ProductCategory;
-
 
   constructor(private productService: ProductService, private router: Router) { }
 

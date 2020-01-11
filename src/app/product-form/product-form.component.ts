@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Product} from '../shared/product';
 import {ProductCategory} from '../shared/product-category';
 import {ProductcategoryService} from '../productcategory-service/productcategory.service';
+import {ShoppingCart} from '../shared/shopping-cart';
 
 @Component({
   selector: 'app-product-form',

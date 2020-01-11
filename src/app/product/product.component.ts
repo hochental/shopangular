@@ -11,7 +11,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 export class ProductComponent implements OnInit {
 
   product: Product;
-  id: string
+  id: string;
 
   constructor(private productService: ProductService, private route: ActivatedRoute) {  }
 

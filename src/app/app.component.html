@@ -1,3 +1,13 @@
-<a routerLink="/list">List</a>
-<a routerLink="/add">New product</a>
+<a routerLink="/list">Zakupy   </a>
+<b> | </b>
+<a routerLink="user">Panel użytkownika   </a>
+<b> | </b>
+<a  *ngIf="user==null" href="http://localhost:8080/login">Login   </a>
+<a  *ngIf="user!=null" href="http://localhost:8080/logout">Logout   </a>
+<b> | </b>
+<a routerLink="/project">Projekty   </a>
+<b> | </b>
+<a routerLink="">Panel zarządzania klientami   </a>
+
+<p *ngIf="user"> Zalogowany użytkownik: {{user.username}}</p>
 <router-outlet></router-outlet>
