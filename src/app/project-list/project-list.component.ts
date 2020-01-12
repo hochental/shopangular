@@ -10,6 +10,7 @@ import {ProjectService} from '../project-service/project.service';
 export class ProjectListComponent implements OnInit {
 
   projectList: Project[];
+  errorMsg;
 
   constructor(private projectService:ProjectService) { }
 
@@ -17,8 +18,7 @@ export class ProjectListComponent implements OnInit {
 
     this.projectService.getProjects().subscribe( (project : Project[]) => {
       this.projectList=project;
-    })
-
+    }, error => this.errorMsg = error);
   }
 
 }

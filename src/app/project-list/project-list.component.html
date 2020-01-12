@@ -1,10 +1,13 @@
-<table>
+<br><b>{{errorMsg}}</b>
+<table *ngIf="!errorMsg">
+
   <tr>
   <td>Lp</td>
   <td>Nazwa</td>
   <td>Ulica</td>
   <td>Numer</td>
   <td>Cena</td>
+  <td>Uzytkownik</td>
   </tr>
   <tr *ngFor="let project of projectList">
     <td>{{project.id}}</td>
@@ -12,5 +15,6 @@
     <td>{{project.streetName}}</td>
     <td>{{project.streetNumber}}</td>
     <td>{{project.price}}</td>
+    <td>{{project.user.username}}</td>
   </tr>
 </table>

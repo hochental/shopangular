@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {HttpClient, HttpErrorResponse} from '@angular/common/http';
+import {Observable, throwError} from 'rxjs';
 import {Product} from '../shared/product';
+import {catchError} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,7 @@ export class ProductService {
   }
 
   getProducts(): Observable<Product[]>{
-    return this.http.get<Product[]>(this.BASE_URL);
+    return this.http.get<Product[]>(this.BASE_URL).pipe(catchError(this.errorHandler));
   }
 
   saveProduct(newProduct: Product) {
@@ -31,4 +32,9 @@ export class ProductService {
   update(editProduct: Product, id: string) {
     return this.http.put(this.BASE_URL+"?id="+id, editProduct);
   }
+
+  errorHandler(error: HttpErrorResponse){
+    return throwError("Brak dostepu do plików" || "Server Error");
+  }
+
 }

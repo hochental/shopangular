@@ -1,4 +1,5 @@
-<table>
+<br><b>{{errorMsg}}</b>
+<table *ngIf="!errorMsg">
   <tr>
     <th>Lp</th>
     <th>Name</th>
@@ -19,21 +20,19 @@
     <td>{{product.category.name}}</td>
     <td>{{product.available ? 'available' : 'non available'}}</td>
     <td>{{product.raiting}}</td>
-    <td><button (click)="addCart(product)">Dodaj</button></td>
+    <td><input type="number" [(ngModel)]="product.pictureLink"><button (click)="addCart(product)">Dodaj</button></td>
     <td> <a (click)="method(product.id)">Delete</a> </td>
   </tr>
-
+  <a routerLink="/add">Dodaj produkt</a>
 </table>
 
-<table *ngIf="productList.length>0">
-  <tr>
-    <th>Name</th>
-    <th>Price</th>
-  </tr>
-  <tr *ngFor="let cart of productList">
-    <th>{{cart.name}}</th>
-    <th>{{cart.price}}</th>
-  </tr>
+<table *ngIf="cart.size>0">
+  <ul>
+    <li *ngFor="let cart of cart | keyvalue">
+      {{cart.key.name}} = {{cart.value}} sztuk(i)
+    </li>
+  </ul>
+  <p>wartosc kosza: {{cartValie}}</p>
 
   <app-cart-form
                   [cartInfo]="productList"
@@ -43,4 +42,4 @@
 
 </table>
 
-<a routerLink="/add">Dodaj produkt</a>
+
